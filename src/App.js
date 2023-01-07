@@ -1,5 +1,11 @@
+import MyCalendar from "./components/MyCalendar";
+
 function App() {
-  return <h1>hello</h1>;
+  return (
+    <div>
+      <MyCalendar />
+    </div>
+  );
 }
 
 export default App;
