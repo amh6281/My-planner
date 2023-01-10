@@ -5,6 +5,12 @@ import moment from "moment/moment";
 
 const MyCalendar = () => {
   const [value, onChange] = useState(new Date());
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState("");
+
+  const handleClick = (e) => {
+    setTodos((prev) => [input, ...prev]);
+  };
 
   return (
     <div>
@@ -15,6 +21,13 @@ const MyCalendar = () => {
         value={value}
         showNeighboringMonth={false}
       />
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button onClick={handleClick}>추가</button>
+      <h4>{todos}</h4>
     </div>
   );
 };
